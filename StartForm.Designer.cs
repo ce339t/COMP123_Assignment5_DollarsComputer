@@ -96,6 +96,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(540, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.openSaveOrderButton);
             this.Controls.Add(this.newOrderButton);

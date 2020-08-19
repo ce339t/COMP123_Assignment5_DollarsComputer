@@ -6,12 +6,12 @@ namespace COMP123_Assignment5
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class product
+    public class product
     {
         public short productID { get; set; }
 
         [Column(TypeName = "money")]
-        public decimal? cost { get; set; }
+        public decimal cost { get; set; }
 
         [StringLength(255)]
         public string manufacturer { get; set; }
