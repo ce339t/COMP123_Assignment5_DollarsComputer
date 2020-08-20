@@ -9,6 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*COMP123 - Assignment5 -  Dollar Computer
+ Created By: Christina May Pakingan
+ Student#: 301121940
+ Date Created: August 17, 2020
+ Date Modified: August 19, 2020*/
+
 namespace COMP123_Assignment5
 {
     public partial class ProductInfoForm : Form
@@ -18,19 +24,18 @@ namespace COMP123_Assignment5
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
 
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //select another button - hide the current form and show the select form
             this.Hide();
             new SelectForm().Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //cancel button
             Application.Exit();
         }
 
@@ -41,12 +46,14 @@ namespace COMP123_Assignment5
 
         private void selectAnotherProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //hide the current form and show the select form
             this.Hide();
             new SelectForm().Show();
         }
 
         private void ProductInfoForm_Load(object sender, EventArgs e)
         {
+            //display each value of all properties in appropriate textbox in product info form
             productIDTextBox.Text = Program.Product.productID.ToString();
             conditionTextBox.Text = Program.Product.condition;
             costTextBox.Text = string.Format(Program.Product.cost.ToString("C2", CultureInfo.CurrentCulture));
@@ -67,6 +74,12 @@ namespace COMP123_Assignment5
 
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //next button - hide the current form and show the order form
+            this.Hide();
+            new OrderForm().Show();
+        }
     }
     }
 

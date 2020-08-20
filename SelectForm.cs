@@ -9,6 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*COMP123 - Assignment5 -  Dollar Computer
+ Created By: Christina May Pakingan
+ Student#: 301121940
+ Date Created: August 17, 2020
+ Date Modified: August 19, 2020*/
+
 namespace COMP123_Assignment5
 {
     public partial class SelectForm : Form
@@ -18,10 +24,6 @@ namespace COMP123_Assignment5
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void SelectForm_Load(object sender, EventArgs e)
         {
@@ -38,7 +40,10 @@ namespace COMP123_Assignment5
 
             if(e.RowIndex > 0)
             {
+                // next button will be enable once user chose an item
                 nextButton.Enabled = true;
+
+                //get each value of the selection and assign it to the product.cs properties
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                 Program.Product.productID = Convert.ToInt16(row.Cells[0].Value.ToString());
                 Program.Product.cost = (decimal)row.Cells[1].Value;
@@ -72,7 +77,7 @@ namespace COMP123_Assignment5
                 Program.Product.power = row.Cells[29].Value.ToString();
                 Program.Product.webcam = row.Cells[30].Value.ToString();
 
-
+                //display selected item on the the text box
                 SelectionTextBox.Text = $"{Program.Product.manufacturer} {Program.Product.model} " + string.Format(Program.Product.cost.ToString("C2", CultureInfo.CurrentCulture));
             }
             
@@ -80,6 +85,7 @@ namespace COMP123_Assignment5
 
         private void nextButton_Click(object sender, EventArgs e)
         {
+            //hide the current form and show the product info form
             this.Hide();
             new ProductInfoForm().Show();
         }
